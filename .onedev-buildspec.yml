@@ -99,7 +99,7 @@ jobs:
     condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
   - !BuildImageStep
     name: Build Docker Image
-    tags: rymcu/happyshare:@build_version@
+    tags: happyshare/happyshare:@build_version@
     publish: false
     condition: ALL_PREVIOUS_STEPS_WERE_SUCCESSFUL
   jobDependencies:
@@ -116,7 +116,7 @@ jobs:
   steps:
   - !PullRepository
     name: Pull from GitHub
-    remoteUrl: https://github.com/ronger-x/happyshare
+    remoteUrl: https://github.com/ReturnTmp/happyshare
     syncToChildProject: false
     passwordSecret: access_token
     refs: refs/heads/* refs/tags/*
@@ -136,7 +136,7 @@ jobs:
   steps:
   - !PushRepository
     name: Push to GitHub
-    remoteUrl: https://github.com/ronger-x/happyshare
+    remoteUrl: https://github.com/ReturnTmp/happyshare
     passwordSecret: access_token
     withLfs: false
     force: false
